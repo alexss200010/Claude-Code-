@@ -49,6 +49,39 @@ Once installed, the skill activates automatically when you ask:
 
 [→ View Skill Definition](project-analyzer/SKILL.md)
 
+#### Commit Helper Skill
+
+A comprehensive git workflow skill that guides you through creating meaningful, well-structured commits following industry best practices and Conventional Commits specification.
+
+**Features:**
+- Atomic commit principles (one logical change per commit)
+- Conventional Commits support (feat, fix, docs, refactor, etc.)
+- 6-step commit analysis process
+- Message templates for features, fixes, refactoring, and docs
+- Pre-commit checklist for code quality
+- Special cases handling (WIP, amending, co-authors)
+- Anti-patterns to avoid
+
+**Installation:**
+
+```bash
+# Copy the skill to your Claude Code skills directory
+cp -r commit-helper ~/.claude/skills/
+
+# Or symlink it for easier updates
+ln -s "$(pwd)/commit-helper" ~/.claude/skills/commit-helper
+```
+
+**Usage:**
+
+Once installed, the skill activates automatically when you:
+- Ask to "commit changes" or "create a commit"
+- Request "help with commit message"
+- Need guidance on organizing multiple changes
+- Want to follow git best practices
+
+[→ View Skill Definition](commit-helper/SKILL.md)
+
 ### 📁 Project Organization Structure
 
 Pre-configured directory structure for organizing your Claude Code projects:
@@ -80,8 +113,12 @@ Open [`cheat-sheet.md`](cheat-sheet.md) for comprehensive setup and usage instru
 ### 3. Install Custom Skills
 
 ```bash
-# Install the project-analyzer skill
+# Install both skills
+cp -r project-analyzer commit-helper ~/.claude/skills/
+
+# Or install individually
 cp -r project-analyzer ~/.claude/skills/
+cp -r commit-helper ~/.claude/skills/
 ```
 
 ### 4. Use the Directory Structure
